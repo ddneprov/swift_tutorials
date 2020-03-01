@@ -34,24 +34,75 @@
                                 <rect key="frame" x="189" y="336" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symbol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ev8-sh-w0k">
+                                <rect key="frame" x="40" y="145" width="58" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CI5-nZ-2Et">
+                                <rect key="frame" x="366" y="145" width="8" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rne-Vy-CwU">
+                                <rect key="frame" x="40" y="206" width="39" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbv-KX-WZs">
+                                <rect key="frame" x="366" y="206" width="8" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZS-vH-9x7">
+                                <rect key="frame" x="40" y="267" width="103" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipy-ki-5nS">
+                                <rect key="frame" x="366" y="267" width="8" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="lq9-qp-ceS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="1jW-UM-YYi"/>
                             <constraint firstItem="k9L-2R-oSE" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="8M3-Ag-I3Z"/>
+                            <constraint firstItem="rne-Vy-CwU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="CjT-DO-etZ"/>
+                            <constraint firstItem="lZS-vH-9x7" firstAttribute="top" secondItem="rne-Vy-CwU" secondAttribute="bottom" constant="40" id="D8R-JE-EgV"/>
+                            <constraint firstItem="Zbv-KX-WZs" firstAttribute="top" secondItem="CI5-nZ-2Et" secondAttribute="bottom" constant="40" id="Ob2-Q1-8k8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="k9L-2R-oSE" secondAttribute="bottom" id="Ol5-av-oNp"/>
+                            <constraint firstItem="lZS-vH-9x7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="PsB-gn-LQq"/>
                             <constraint firstItem="k9L-2R-oSE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Snm-HR-qYb"/>
+                            <constraint firstItem="Ev8-sh-w0k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="V6n-BN-G7Z"/>
+                            <constraint firstItem="CI5-nZ-2Et" firstAttribute="top" secondItem="wmW-81-C51" secondAttribute="bottom" constant="40" id="VGa-v8-jGz"/>
+                            <constraint firstItem="Ev8-sh-w0k" firstAttribute="top" secondItem="lq9-qp-ceS" secondAttribute="bottom" constant="40" id="VfD-wk-nyS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CI5-nZ-2Et" secondAttribute="trailing" constant="40" id="diX-rc-Wal"/>
                             <constraint firstItem="k9L-2R-oSE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gJz-7B-5bz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wmW-81-C51" secondAttribute="trailing" constant="40" id="gbt-pv-R5u"/>
                             <constraint firstItem="lq9-qp-ceS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="jaN-Lc-Ogs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ipy-ki-5nS" secondAttribute="trailing" constant="40" id="l4q-AK-Qo8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zbv-KX-WZs" secondAttribute="trailing" constant="40" id="mwQ-eS-hNl"/>
+                            <constraint firstItem="Ipy-ki-5nS" firstAttribute="top" secondItem="Zbv-KX-WZs" secondAttribute="bottom" constant="40" id="uZI-Dz-Da2"/>
                             <constraint firstItem="wmW-81-C51" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="vSR-fm-xuc"/>
+                            <constraint firstItem="rne-Vy-CwU" firstAttribute="top" secondItem="Ev8-sh-w0k" secondAttribute="bottom" constant="40" id="wcd-9U-CAJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="rju-oA-wOG" id="wv0-PO-QWl"/>
+                        <outlet property="changeLabel" destination="Ipy-ki-5nS" id="DBL-Pv-Hxi"/>
                         <outlet property="companyNameLabel" destination="wmW-81-C51" id="jMd-Wu-DAc"/>
                         <outlet property="companyPickerView" destination="k9L-2R-oSE" id="IBc-mT-5xU"/>
+                        <outlet property="companySymbolLabel" destination="CI5-nZ-2Et" id="KJ4-4h-lAa"/>
+                        <outlet property="priceLabel" destination="Zbv-KX-WZs" id="UPt-iV-oE7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
