@@ -15,6 +15,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
  
     
+    
      private let components: [String: String] = ["Apple":"AAPL",
                                                  "Microsoft" : "MSFT",
                                                  "Google":"GOOG",
