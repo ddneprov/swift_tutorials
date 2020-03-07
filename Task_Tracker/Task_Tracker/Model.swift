@@ -23,8 +23,8 @@ var ToDoItems: [[String : Any]] {
     }}
     
 }
-func addItem(nameItem: String, isCompleted: String = "new"){
-    ToDoItems.append(["Name": nameItem, "isCompleted": isCompleted])
+func addItem(nameItem: String, isCompleted: String = "new", taskDescription: String = ""){
+    ToDoItems.append(["Name": nameItem, "isCompleted": isCompleted, "Description": taskDescription])
 }
 
 func removeItem(at index: Int){

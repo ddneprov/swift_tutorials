@@ -16,7 +16,11 @@ class TableViewController: UITableViewController {
         let alertController = UIAlertController(title: "Че сделать надо?", message: nil, preferredStyle: .alert)
         
         alertController.addTextField { (TextField) in
-            TextField.placeholder = "Поконкретнее"
+            TextField.placeholder = "Задача"
+        }
+        
+        alertController.addTextField { (TextField) in
+            TextField.placeholder = "А поподробнее?"
         }
         
         
@@ -26,18 +30,17 @@ class TableViewController: UITableViewController {
         }
         
         let alertAction2 = UIAlertAction(title: "Create", style: .cancel) { (alert) in
-            // добавить новую запись
             let newItem = alertController.textFields![0].text
-            addItem(nameItem: newItem!)
+            let description = alertController.textFields![1].text
+            addItem(nameItem: newItem!,taskDescription: description!)
             self.tableView.reloadData()
-        
         }
         
         
+        present(alertController, animated: true, completion: nil)
         alertController.addAction(alertAction1)
         alertController.addAction(alertAction2)
 
-        present(alertController, animated: true, completion: nil)
     }
     
     
@@ -69,8 +72,8 @@ class TableViewController: UITableViewController {
 
         let currentItem = ToDoItems[indexPath.row]
         cell.textLabel?.text = currentItem["Name"] as? String
+        cell.detailTextLabel?.text = currentItem["Description"] as? String
         
-    
         if ((currentItem["isCompleted"] as? String ) == "done") {
             cell.imageView?.image = #imageLiteral(resourceName: "third")
         }else if ((currentItem["isCompleted"] as? String ) == "new") {
