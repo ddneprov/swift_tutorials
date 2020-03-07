@@ -12,10 +12,32 @@ class TableViewController: UITableViewController {
     
     
     
-    
     @IBAction func PushAddItem(_ sender: Any) {
-        addItem(nameItem: "Опять")
-        tableView.reloadData()
+        let alertController = UIAlertController(title: "Че сделать надо?", message: nil, preferredStyle: .alert)
+        
+        alertController.addTextField { (TextField) in
+            TextField.placeholder = "Поконкретнее"
+        }
+        
+        
+        
+        let alertAction1 = UIAlertAction(title: "Cancel", style: .default) { (alert) in
+        
+        }
+        
+        let alertAction2 = UIAlertAction(title: "Create", style: .cancel) { (alert) in
+            // добавить новую запись
+            let newItem = alertController.textFields![0].text
+            addItem(nameItem: newItem!)
+            self.tableView.reloadData()
+        
+        }
+        
+        
+        alertController.addAction(alertAction1)
+        alertController.addAction(alertAction2)
+
+        present(alertController, animated: true, completion: nil)
     }
     
     
@@ -48,10 +70,11 @@ class TableViewController: UITableViewController {
         let currentItem = ToDoItems[indexPath.row]
         cell.textLabel?.text = currentItem["Name"] as? String
         
+        
         if ( currentItem["isCompleted"] as? Bool ) == true {
-            cell.accessoryType = .checkmark
+            cell.imageView?.image = #imageLiteral(resourceName: "third")
         }else{
-            cell.accessoryType = .none
+            cell.imageView?.image = #imageLiteral(resourceName: "first")
         }
 
         return cell
@@ -81,9 +104,9 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if (changeState(at: indexPath.row) == true){
-            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+            tableView.cellForRow(at: indexPath)?.imageView?.image = #imageLiteral(resourceName: "third")
         }else{
-            tableView.cellForRow(at: indexPath)?.accessoryType = .none
+            tableView.cellForRow(at: indexPath)?.imageView?.image =  #imageLiteral(resourceName: "first")
         }
         
     }
