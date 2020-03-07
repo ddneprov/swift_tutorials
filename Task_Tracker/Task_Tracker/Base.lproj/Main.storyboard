@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--BTS-->
+        <!--Table View Controller-->
         <scene sceneID="4pU-eR-rPH">
             <objects>
                 <tableViewController id="cIh-LD-87k" customClass="TableViewController" customModule="Task_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,8 +38,9 @@
                             <outlet property="delegate" destination="cIh-LD-87k" id="bys-sf-Jk0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="BTS" id="BAr-6k-DNL">
+                    <navigationItem key="navigationItem" id="BAr-6k-DNL">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="VIf-rw-Iic">
+                            <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="PushAddItem:" destination="cIh-LD-87k" id="hft-oJ-K0u"/>
                             </connections>

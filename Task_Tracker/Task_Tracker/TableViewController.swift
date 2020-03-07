@@ -70,11 +70,13 @@ class TableViewController: UITableViewController {
         let currentItem = ToDoItems[indexPath.row]
         cell.textLabel?.text = currentItem["Name"] as? String
         
-        
-        if ( currentItem["isCompleted"] as? Bool ) == true {
+    
+        if ((currentItem["isCompleted"] as? String ) == "done") {
             cell.imageView?.image = #imageLiteral(resourceName: "third")
-        }else{
+        }else if ((currentItem["isCompleted"] as? String ) == "new") {
             cell.imageView?.image = #imageLiteral(resourceName: "first")
+        }else {
+            cell.imageView?.image = #imageLiteral(resourceName: "second")
         }
 
         return cell
@@ -103,12 +105,15 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if (changeState(at: indexPath.row) == true){
-            tableView.cellForRow(at: indexPath)?.imageView?.image = #imageLiteral(resourceName: "third")
-        }else{
-            tableView.cellForRow(at: indexPath)?.imageView?.image =  #imageLiteral(resourceName: "first")
-        }
         
+        let changedState = changeState(at: indexPath.row)
+        if (changedState == "done"){
+            tableView.cellForRow(at: indexPath)?.imageView?.image = #imageLiteral(resourceName: "third")
+        }else if (changedState == "new"){
+            tableView.cellForRow(at: indexPath)?.imageView?.image =  #imageLiteral(resourceName: "first")
+        }else {
+            tableView.cellForRow(at: indexPath)?.imageView?.image = #imageLiteral(resourceName: "second")
+        }
     }
 
     /*

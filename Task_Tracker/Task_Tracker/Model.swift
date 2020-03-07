@@ -14,8 +14,8 @@ var ToDoItems: [[String : Any]] {
         UserDefaults.standard.set(newValue, forKey: "ToDoDataKey")
         UserDefaults.standard.synchronize()
     }
-    
-    get{ if let arraya = UserDefaults.standard.array(forKey: "ToDoDataKey") as? [[String : Any]]{
+    get{
+        if let arraya = UserDefaults.standard.array(forKey: "ToDoDataKey") as? [[String : Any]]{
         return arraya
     }
     else{
@@ -23,8 +23,8 @@ var ToDoItems: [[String : Any]] {
     }}
     
 }
-func addItem(nameItem: String, isCompleted: Bool = false){
-    ToDoItems.append(["Name": nameItem, "isCompleted": false])
+func addItem(nameItem: String, isCompleted: String = "new"){
+    ToDoItems.append(["Name": nameItem, "isCompleted": isCompleted])
 }
 
 func removeItem(at index: Int){
@@ -32,7 +32,22 @@ func removeItem(at index: Int){
 }
 
 
-func changeState(at item: Int) -> Bool{
-    ToDoItems[item]["isCompleted"] = !(ToDoItems[item]["isCompleted"] as! Bool)
-    return ToDoItems[item]["isCompleted"] as! Bool
+func changeState(at item: Int) -> String{
+    print("suka 0")
+
+    
+    if((ToDoItems[item]["isCompleted"] as? String) == "new"){
+        print("suka 1")
+        ToDoItems[item]["isCompleted"] = "processing"
+    }
+    else if ((ToDoItems[item]["isCompleted"] as? String) == "processing"){
+        print("suka 2")
+        ToDoItems[item]["isCompleted"] = "done"
+    }
+    else if ((ToDoItems[item]["isCompleted"] as? String) == "done"){
+        print("suka 3")
+        ToDoItems[item]["isCompleted"] = "new"
+    }
+    
+    return ToDoItems[item]["isCompleted"] as! String
 }
