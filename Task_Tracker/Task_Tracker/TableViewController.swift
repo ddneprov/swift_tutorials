@@ -71,6 +71,9 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         let currentItem = ToDoItems[indexPath.row]
+
+        
+      
         cell.textLabel?.text = currentItem["Name"] as? String
         cell.detailTextLabel?.text = currentItem["Description"] as? String
         
@@ -119,6 +122,34 @@ class TableViewController: UITableViewController {
         }
     }
 
+    
+    
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+         let info  = infoAction (at: indexPath)
+               return UISwipeActionsConfiguration(actions: [info])
+    }
+    
+    
+    func infoAction(at indexPath: IndexPath) -> UIContextualAction{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let currentItem = ToDoItems[indexPath.row]
+
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        formatter.dateStyle = .short
+        let date = formatter.string(from: currentItem["date"] as! Date)
+
+
+        tableView.cellForRow(at: indexPath)
+        
+        let action = UIContextualAction(style: .normal, title: date, handler: {
+            (action, view, completition) in
+            completition(true)
+        })
+        action.backgroundColor = .blue
+        return action
+    }
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {

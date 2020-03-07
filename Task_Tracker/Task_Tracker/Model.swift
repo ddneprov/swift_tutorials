@@ -23,8 +23,8 @@ var ToDoItems: [[String : Any]] {
     }}
     
 }
-func addItem(nameItem: String, isCompleted: String = "new", taskDescription: String = ""){
-    ToDoItems.append(["Name": nameItem, "isCompleted": isCompleted, "Description": taskDescription])
+func addItem(nameItem: String, isCompleted: String = "new", taskDescription: String = "", date: Date = Date()){
+    ToDoItems.append(["Name": nameItem, "isCompleted": isCompleted, "Description": taskDescription, "date": date])
 }
 
 func removeItem(at index: Int){
@@ -33,19 +33,15 @@ func removeItem(at index: Int){
 
 
 func changeState(at item: Int) -> String{
-    print("suka 0")
 
     
     if((ToDoItems[item]["isCompleted"] as? String) == "new"){
-        print("suka 1")
         ToDoItems[item]["isCompleted"] = "processing"
     }
     else if ((ToDoItems[item]["isCompleted"] as? String) == "processing"){
-        print("suka 2")
         ToDoItems[item]["isCompleted"] = "done"
     }
     else if ((ToDoItems[item]["isCompleted"] as? String) == "done"){
-        print("suka 3")
         ToDoItems[item]["isCompleted"] = "new"
     }
     
