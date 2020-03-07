@@ -10,7 +10,6 @@ import Foundation
 
 var ToDoItems: [[String : Any]] {
     
-
     set{
         UserDefaults.standard.set(newValue, forKey: "ToDoDataKey")
         UserDefaults.standard.synchronize()
